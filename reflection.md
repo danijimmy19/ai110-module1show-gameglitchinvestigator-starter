@@ -41,6 +41,11 @@ Response:
 - Did AI help you design or understand any tests? How?
 
 Response: 
+  - I was able to decide that a bug was really fixed by reproducing the behavior of the code before and after the fix. For manual testing, I used Debug info panel on the app to compare my guesses to the actual secret number and confirm whether the hint matched the expected direction. Also, I used "iPython" to debug the code and run manual test cases to check if the behavior of the program is as expected. 
+
+  - In addition to manual testing and debugging, I ran the automated tests using the pytest cases for valid and invalid inputs. It should be noted that the test_game_logic.py file needs some tweaks as our game does not just show "Win", "Too High", or "Too Low", it returns tuples of ("Win", "🎉 Correct!"), ("Too High", "📉 Go LOWER!"), or ("Too Low", "📈 Go HIGHER!") so the `test_game_logic.py` script should be updated accordingly. Further, for creating additional test for automated testing, I generated some test cases by my self, and prompted Claude to generate additional test cases for me. 
+
+>> `conftest.py` was added as a "zero-config" tool for automated testing of the project.
 
 ---
 
