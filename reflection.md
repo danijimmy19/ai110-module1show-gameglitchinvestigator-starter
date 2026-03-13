@@ -72,4 +72,7 @@ Response:
   - I feel one habit I want to keep is writing down the expected behavior before changing the code, because it made debugging much more precise. While using AI, I would very each suggestion against the actual code sooner instead of assuming the first suggestion is correct. I have changed the way I think about AI-generated code or suggestions because the code looks well written and easy to read at first, however several bugs were identified in logic and state management.
 
 
-> For a detailed report with screenshots, please review the accompanying PDF for documentation (`report.pdf`) of the code issues, reproducibility evidence, and implemented fixes.
+> **Note:** For a detailed report with screenshots, please review the accompanying PDF for documentation (`report.pdf`) of the code issues, reproducibility evidence, and implemented fixes.
+
+
+> **Note:** Every AI-generated code change, test case, and debugging suggestion included in this project was manually validated and tested before implementation to ensure correctness and avoid introducing new issues.

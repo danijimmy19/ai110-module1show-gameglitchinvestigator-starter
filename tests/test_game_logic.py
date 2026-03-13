@@ -1,5 +1,6 @@
 from logic_utils import *
 
+print(f"Running tests for check_guess...")
 def test_winning_guess():
     # If the secret is 50 and guess is 50, it should be a win
     result = check_guess(50, 50)
@@ -19,7 +20,7 @@ def test_guess_too_low():
 # ---------------------------
 # get_range_for_difficulty
 # ---------------------------
-
+print(f"Running tests for get_range_for_difficulty...")
 def test_easy_range():
     assert get_range_for_difficulty("Easy") == (1, 20)
 
@@ -43,6 +44,7 @@ def test_unknown_difficulty_defaults_to_normalish_range():
 # update_score
 # ---------------------------
 
+print(f"Running tests for update_score...")
 def test_update_score_win_awards_points():
     new_score = update_score(current_score=0, outcome="Win", attempt_number=3)
     assert new_score > 0
