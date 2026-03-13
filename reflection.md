@@ -11,6 +11,8 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 Response: 
   - When I first ran the Streamlit app, the code execute without any issues. First, when I selected different difficulty levels, the range for different levels of bit off to me. Second, the most visible bug was the hints were backwards, that is, a guess that was too high told me to go higher, and a guess that was too low told me to go lower. I also found that some turns compared the guess against a string version of the secret number, which caused incorrect outcomes. Finally, I also noticed the New Game button did not fully reset the app state. 
 
+  - In addition, I also observed that after a win or loss, clicking New Game leaves the app in “won” or “lost” state. It also ignores the difficulty range when generating the new secret. 
+
 ---
 
 ## 2. How did you use AI as a teammate?
@@ -18,6 +20,16 @@ Response:
 - Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
+
+Response:  
+  - I used Claude for help with bug identification and fixing them 
+
+  - Correct AI Suggestion - Hard mode is easier than Normal
+    - Cause: “get_range_for_difficulty()” returns (1,100) for Normal and (1,50) for Hard.
+
+  - Incorrect AI Suggestion
+    - AI suggested issues with the Streamlit app resetting the secret. Since the app already shares the secret in session state, the bigger issues were reversed hint logic and incomplete reset behavior.
+
 
 ---
 
@@ -28,11 +40,18 @@ Response:
   and what it showed you about your code.
 - Did AI help you design or understand any tests? How?
 
+Response: 
+
 ---
 
 ## 4. What did you learn about Streamlit and state?
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
+
+Response: 
+  - In normal Python script, we run it once and it is done with execution. In Streamlit, the moment we interact with the app, Streamlit refreshes the app. It starts at line 1 and executes the whole script again to make sure new changes are properly reflected. Since it restarts the script, it forgets everything. For example, our `score` variable will reset to `0` everything script reruns and causes problems as we cannot keep track of progress.
+
+  - The session state gives a our app a memory and that makes our app keep track of secret number, sore and attempts between the reruns. Also, resetting the UI is necessary to keep the game logic in sync.
 
 ---
 
@@ -42,3 +61,7 @@ Response:
   - This could be a testing habit, a prompting strategy, or a way you used Git.
 - What is one thing you would do differently next time you work with AI on a coding task?
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+
+
+Response:
+  - I feel one habit I want to keep is writing down the expected behavior before changing the code, because it made debugging much more precise. While using AI, I would very each suggestion against the actual code sooner instead of assuming the first suggestion is correct. I have changed the way I think about AI-generated code or suggestions because the code looks well written and easy to read at first, however several bugs were identified in logic and state management.
