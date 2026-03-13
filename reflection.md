@@ -8,6 +8,9 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
 
+Response: 
+  - When I first ran the Streamlit app, the code execute without any issues. First, when I selected different difficulty levels, the range for different levels of bit off to me. Second, the most visible bug was the hints were backwards, that is, a guess that was too high told me to go higher, and a guess that was too low told me to go lower. I also found that some turns compared the guess against a string version of the secret number, which caused incorrect outcomes. Finally, I also noticed the New Game button did not fully reset the app state. 
+
 ---
 
 ## 2. How did you use AI as a teammate?
