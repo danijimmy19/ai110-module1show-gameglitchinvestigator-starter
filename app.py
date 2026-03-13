@@ -1,5 +1,6 @@
 import random
 import streamlit as st
+from logic_utils import *    
 
 st.set_page_config(page_title="Glitchy Guesser", page_icon="🎮")
 
@@ -92,11 +93,12 @@ if submit:
     else:
         st.session_state.history.append(guess_int)
 
-        if st.session_state.attempts % 2 == 0:
-            secret = str(st.session_state.secret)
-        else:
-            secret = st.session_state.secret
-
+        # if st.session_state.attempts % 2 == 0:
+        #     secret = str(st.session_state.secret)
+        # else:
+        #     secret = st.session_state.secret
+        secret = st.session_state.secret
+    
         outcome, message = check_guess(guess_int, secret)
 
         if show_hint:
